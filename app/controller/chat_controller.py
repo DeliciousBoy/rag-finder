@@ -1,6 +1,7 @@
 import time
 import streamlit as st
 
+
 class ChatController:
     def __init__(self):
         if "messages" not in st.session_state:
@@ -24,19 +25,27 @@ class ChatController:
                 for file in prompt.files:
                     if file.type.startswith("image/"):
                         st.image(file, width=300)
-                        st.session_state.messages.append({"role": "user", "content": f"![{file.name}]({file.name})"})
+                        st.session_state.messages.append(
+                            {"role": "user", "content": f"![{file.name}]({file.name})"}
+                        )
                     elif file.type == "text/plain":
                         content = file.read().decode("utf-8")
                         st.text(content)
-                        st.session_state.messages.append({"role": "user", "content": f"```\n{content}\n```"})
+                        st.session_state.messages.append(
+                            {"role": "user", "content": f"```\n{content}\n```"}
+                        )
                     elif file.type == "application/pdf":
                         st.write(f"PDF file: {file.name}")
-                        st.session_state.messages.append({"role": "user", "content": f"PDF file: {file.name}"})
+                        st.session_state.messages.append(
+                            {"role": "user", "content": f"PDF file: {file.name}"}
+                        )
 
             # Display the user's message
             if prompt.text:
                 st.markdown(prompt.text)
-                st.session_state.messages.append({"role": "user", "content": prompt.text})
+                st.session_state.messages.append(
+                    {"role": "user", "content": prompt.text}
+                )
 
         # Generate a response
         with st.chat_message("assistant"):
