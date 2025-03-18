@@ -9,7 +9,7 @@ data = None  # ตัวแปรเก็บข้อมูลที่โห�
 def get_data():
     global data
     if data is None:  # โหลดข้อมูล
-        data_path = r"D:\GraduationProject\skill_mapping\knowledgbase\developers_programmers_jobposting_corpus_skill.json"
+        data_path = r"src\knowledgbase\developers_programmers_jobposting_corpus_skill.json"
         with open(data_path, encoding="utf-8") as f:
             data = json.load(f)
     return data
