@@ -7,6 +7,7 @@ class ChatController:
         if "messages" not in st.session_state:
             st.session_state.messages = []
 
+    # Define a generator function to yield each word in the response
     def response_generator(self, prompt):
         response = f"{prompt} is a great choice! I love it! "
         for word in response.split():
