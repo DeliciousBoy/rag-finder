@@ -9,7 +9,7 @@ model_path = "microsoft/Phi-4-mini-instruct"
 
 model = AutoModelForCausalLM.from_pretrained(
     model_path,
-    torch_dtype="auto",
+    torch_dtype=torch.float16,
     trust_remote_code=True,
 )
 model.to("cuda")
@@ -21,7 +21,7 @@ pipe = pipeline(
     tokenizer=tokenizer,
 )
 generation_args = {
-    "max_new_tokens": 100,
+    "max_new_tokens": 200,
     "return_full_text": False,
     "temperature": 0.0,
     "do_sample": False,
@@ -46,7 +46,7 @@ def text_generation(prompt):
     end_time = time.time()
     execution_time = end_time - start_time
 
-    # print(output[0]['generated_text'])
+    print(output[0]['generated_text'])
     print(f"Execution time: {execution_time:.2f} seconds")
     return output[0]['generated_text']
 

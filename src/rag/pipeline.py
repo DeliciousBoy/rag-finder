@@ -1,6 +1,6 @@
-from retrieval import retrieval
-from augmented import augmented
-from generation import text_generation
+from .retrieval import retrieval
+from .augmented import augmented
+from .generation import text_generation
 
 def rag_pipeline(query, top_k):
 
