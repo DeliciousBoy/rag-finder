@@ -12,6 +12,6 @@ def rag_pipeline(query, top_k):
    return response
 
 
-query = "ฉันอยากเสี่ยงสัตววิเศษที่ ที่เป็นมิตร ต่อพ่อมด อาศัยอยู่ในนํ้า ชอบกินผักขม มีตัวอะไรเเนะนำบ้าง?"
-test = rag_pipeline(query, 3)
-print(test) 
+# query = "ฉันอยากเสี่ยงสัตววิเศษที่ ที่เป็นมิตร ต่อพ่อมด อาศัยอยู่ในนํ้า ชอบกินผักขม มีตัวอะไรเเนะนำบ้าง?"
+# test = rag_pipeline(query, 3)
+# print(test) 
